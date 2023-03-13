@@ -58,7 +58,7 @@ const arrayOfBookObjects = [
 ]
 
 let currentMouseOverColor = "#012626";
-let currentMouseOutColor = "#5A838C";
+let currentMouseOutColor = "#27736B";
 
 const intro = document.getElementById("intro");
 const info = document.getElementById("info");
@@ -121,10 +121,10 @@ const reset = () => {
    buttons.style.backgroundColor = "#400D0D";
 
    for (i = 0; i < 4; i++) {
-      book[i].style.backgroundColor = "#5A838C";
+      book[i].style.backgroundColor = "#27736B";
    }
 
-   currentMouseOutColor = "#5A838C";
+   currentMouseOutColor = "#27736B";
    currentMouseOverColor = "#012626";
 }
 
