@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nick's Little Free Library</title>
+    <link href="freelib.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="header" style="text-align:center;">
+            <div onclick="reset()">
+                <h1>Nick's Little Free Library</h1>
+            </div>
+        </div>
+        <div id="buttons">
+            <nav class="flex-container">
+                <div><button class="book" id="book1" onclick="displayBook(1)">Book One</button></div>
+                <div><button class="book" id="book2" onclick="displayBook(2)">Book Two</button></div>
+                <div><button class="book" id="book3" onclick="displayBook(3)">Book Three</button></div>
+                <div><button class="book" id="book4" onclick="displayBook(4)">Book Four</button></div>
+            </nav>
+        </div>
+        
+        <div id="bookDisplay">
+            <div id="intro" style="text-align:center; padding: 42px;">
+                <h3>Welcome to <br>Nicks Little Free Library.</h3>
+                <h4>To learn about a book, click one of the book buttons above</h4>
+                <h4>If you ever want to return to this page, click <br>"Nick's Little Free Library"</h4>
+            </div>
+            <div hidden id="info" style="text-align:center; padding-bottom: 30px !important;">
+                <h3>Title</h3>
+                <div id="bookTitle">&nbsp;</div>
+                <h3>Author</h3>
+                <div id="bookAuthor">&nbsp;</div>
+                <h3>Publisher</h3>
+                <div id="bookPublisher">&nbsp;</div>
+                <h3>Publication</h3>
+                <div id="bookYear">&nbsp;</div>
+            </div>
+        </div>
+        <div id="image">
+            <div id="bookImage">
+                <img src="./images/logos/library_logo_crop.png">
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Nick Tysh ©<span id="year"></span>
+    </div>
+    <script src="freelib.js"></script>
+</body>
+</html>
