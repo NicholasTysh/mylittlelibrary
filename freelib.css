@@ -15,43 +15,38 @@ body {
 }
 
 .container {
-  box-sizing: border-box;
   display: grid;
   height: 100vh;
   max-height: 80vh;
+  box-sizing: border-box;
   padding: 5% 25% 5% 25%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: .5fr .2fr 1.5fr;
   grid-template-areas:
-    "header header header header"
-    "buttons buttons buttons buttons"
-    "bookDisplay bookDisplay image image ";
+    "header header"
+    "buttons buttons"
+    "bookDisplay image";
+  filter: drop-shadow(10px 10px 10px black);
 }
 
 #header {
-  background-color: white;
   grid-area: header;
   display: flex;
+  background-color: white;
   justify-content: center;
   background-color: #8C311C;
-  border-radius: 20px 20px 0px 0px; 
-  border-color: rgb(30, 30, 30);
-  border-style: solid;
-  border-width: 1px 5px 0px 1px;
+  border-radius: 20px 20px 0px 0px;
   transition: background-color 0.2s ease-in-out;
 }
 
 #buttons {
-  background-color: white;
   grid-area: buttons;
   display: flex;
+  background-color: white;
   justify-content: center;
   align-items: center;
   background-color: #400D0D;
-  border-color: rgb(30, 30, 30);
-  border-style: solid;
-  border-width: 0px 5px 0px 1px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
 }
 
 #buttons div {
@@ -59,33 +54,25 @@ body {
 }
 
 #bookDisplay {
-  background-color: #5A838C;
   grid-area: bookDisplay;
   display: block;
+  background-color: #5A838C;
   justify-content: left;
   background-color: #BCBF63;
-  border-radius: 0px 0px 0px 20px; 
-  border-color: rgb(30, 30, 30);
-  border-style: solid;
-  border-width: 0px 0px 5px 1px;
-  /* padding: 30px; */
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 0px 0px 0px 20px;
+  transition: background-color 0.8s ease-in-out;
 }
 
 #image {
-  background-color: #5A838C;
   grid-area: image;
-  /* background-color: red; */
   display: flex;
+  background-color: #5A838C;
   justify-content: center;
   overflow: hidden;
   border-radius: 0px 0px 20px 0px;
-  border-color: rgb(30, 30, 30);
-  border-style: solid;
-  border-width: 0px 5px 5px 0px;
   padding: 10px;
   min-height: 300px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.6s ease-in-out;
 }
 
 #image img {
@@ -94,7 +81,8 @@ body {
   height: 100%;
   object-fit: contain;
   border-radius: 10px;
-  transition: opacity 3s ease-in-out;
+  /* transition: opacity 100s ease-in-out; */
+  filter: drop-shadow(4px 4px 4px black);
 }
 
 .book {
@@ -103,24 +91,17 @@ body {
   color: white;
   padding: 10px 20px;
   border: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.10s ease-in-out;
+  filter: drop-shadow(2px 2px 2px black);
 }
 
 .book:hover {
-  /* background-color: #0130; */
   cursor: pointer;
 }
 
 #header:hover {
   cursor: pointer;
 }
-
-/* .footer {
-  position: fixed; 
-  bottom: 0; 
-  width: 100%; 
-  text-align: center;
-} */
 
 @media only screen and (max-width: 1025px) {
   .container {
@@ -136,11 +117,9 @@ body {
   }
   #bookDisplay {
     border-radius: 0px 0px 20px 20px;
-    border-width: 0px 5px 5px 1px;
     padding: 5px;
   }
   #image {
-    border-width: 0px 5px 0px 1px;
     border-radius: 0px 0px 0px 0px;
   }
   #header {

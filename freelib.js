@@ -163,6 +163,9 @@ button4.addEventListener("mouseout", function() {
    button4.style.backgroundColor = currentMouseOutColor;
 });
 
+/////////////////
+// Footer Date //
+/////////////////
 
 const date = new Date();
 let year = date.getFullYear();
