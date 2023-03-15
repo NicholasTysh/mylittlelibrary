@@ -2,6 +2,7 @@
 // Global Variables //
 //////////////////////
 
+// array of book objects with extra colors added for each and an image
 const arrayOfBookObjects = [
    {
       title: "The Catcher in the Rye",
@@ -25,7 +26,7 @@ const arrayOfBookObjects = [
       jacketColor: "#F2C53D",
       cover_background: "#403013",
       header_background: "#BF2121",
-      buttons_background: "#0D0D0D",
+      buttons_background: "#260101",
       buttons_color: "#594319",
       button_hover: "#BF2121"
    },
@@ -57,9 +58,11 @@ const arrayOfBookObjects = [
    }
 ]
 
+// current mouse over and mouse out set to home colors
 let currentMouseOverColor = "#012626";
 let currentMouseOutColor = "#27730B";
 
+// variables for dom elements
 const intro = document.getElementById("intro");
 const info = document.getElementById("info");
 const bookTitle = document.getElementById("bookTitle");
@@ -71,6 +74,7 @@ const bookDisplay = document.getElementById("bookDisplay");
 const image = document.getElementById("image");
 const header = document.getElementById("header");
 const buttons = document.getElementById("buttons");
+
 const book = document.getElementsByClassName("book");
 
 ///////////////
@@ -78,52 +82,62 @@ const book = document.getElementsByClassName("book");
 ///////////////
 
 // Write your function(s) here
-
 const displayBook = (bookNumber) => {
+   // variable for object position
    const bookIndex = arrayOfBookObjects[bookNumber - 1];
-   const {title, author, publisher, year, 
-      cover, jacketColor, cover_background, 
-      header_background, buttons_background, 
-      buttons_color, button_hover
-   } = bookIndex
+   // deconstruction of object
+   const {title, author, publisher, year, cover, jacketColor, cover_background, 
+      header_background, buttons_background, buttons_color, button_hover} = bookIndex
 
+   // hide main screen and show first book
    intro.hidden = true;
    info.hidden = false;
 
+   // set inner html with information from object[number]
    bookTitle.innerHTML = title;
    bookAuthor.innerHTML = author;
    bookPublisher.innerHTML = publisher;
    bookYear.innerHTML = year;
    bookImage.innerHTML = "<img src ='" + cover + "' id='img' >";
 
+   // set background colors to that in the current object
    bookDisplay.style.backgroundColor = jacketColor;
    image.style.backgroundColor = cover_background;
    header.style.backgroundColor = header_background;
    buttons.style.backgroundColor = buttons_background;
 
+   // loop to change button colors
    for (i = 0; i < 4; i++) {
       book[i].style.backgroundColor = buttons_color;
    }
 
+   // set current mouse out and over colors
    currentMouseOutColor = buttons_color;
    currentMouseOverColor = button_hover;
 }
 
+
+// resets everything back to the main menu colors and text
 const reset = () => {
+   // switch visibility of booksDisplay divs back to main screen
    intro.hidden = false;
    info.hidden = true;
 
-   bookImage.innerHTML = "<img src ='./images/logos/library_logo_crop.png' id='img' >";
+   // display main screen image
+   bookImage.innerHTML = "<img src='./images/logos/library_logo.png' id='img' style='filter: drop-shadow(1px 1px 1px black);'>";
 
+   // set backgrounds to main menu colors
    bookDisplay.style.backgroundColor = "#BCBF63";
    image.style.backgroundColor = "#5A838C";
    header.style.backgroundColor = "#8C311C";
    buttons.style.backgroundColor = "#400D0D";
 
+   // set button colors to main menu colors
    for (i = 0; i < 4; i++) {
       book[i].style.backgroundColor = "#27730B";
    }
 
+   // set mouse out and over colors to main screen colors
    currentMouseOutColor = "#27730B";
    currentMouseOverColor = "#012626";
 }
@@ -133,11 +147,14 @@ const reset = () => {
 // Event Listiners for Button Hover Colors Change //
 ////////////////////////////////////////////////////
 
+// variables for dom button elements
 const button1 = document.getElementById("book1");
 const button2 = document.getElementById("book2");
 const button3 = document.getElementById("book3");
 const button4 = document.getElementById("book4");
 
+
+// event listeners for mouseover and mouseout for all 4 buttons
 button1.addEventListener("mouseover", function() {
    button1.style.backgroundColor = currentMouseOverColor;
 });
@@ -167,6 +184,9 @@ button4.addEventListener("mouseout", function() {
 // Footer Date //
 /////////////////
 
+// get date
 const date = new Date();
+// get year
 let year = date.getFullYear();
+// display year next to name on main screen
 document.getElementById("year").innerHTML = year;
