@@ -15,7 +15,8 @@ const arrayOfBookObjects = [
       header_background: "#F2AE2E",
       buttons_background: "#D92B2B",
       buttons_color: "#262126",
-      button_hover: "#736151"
+      button_hover: "#736151",
+      long_description: "The Catcher in the Rye, novel by J.D. Salinger published in 1951. The novel details two days in the life of 16-year-old Holden Caulfield after he has been expelled from prep school. Confused and disillusioned, Holden searches for truth and rails against the “phoniness” of the adult world. He ends up exhausted and emotionally unstable."
    },
    {
       title: "The Alchemist",
@@ -28,7 +29,8 @@ const arrayOfBookObjects = [
       header_background: "#BF2121",
       buttons_background: "#260101",
       buttons_color: "#594319",
-      button_hover: "#BF2121"
+      button_hover: "#BF2121",
+      long_description: "The Alchemist is a classic novel in which a boy named Santiago embarks on a journey seeking treasure in the Egyptian pyramids after having a recurring dream about it and on the way meets mentors, falls in love, and most importantly, learns the true importance of who he is and how to improve himself and focus on what really matters in life."
    },
    {
       title: "The Great Gatsby",
@@ -41,7 +43,8 @@ const arrayOfBookObjects = [
       header_background: "#D96704",
       buttons_background: "#30588C",
       buttons_color: "#2D3856",
-      button_hover: "#F26A4B"
+      button_hover: "#F26A4B",
+      long_description: "F. Scott Fitzgerald's 'The Great Gatsby' follows the story of Jay Gatsby, a man who orders his life around one desire: to be reunited with Daisy Buchanan, the love he lost five years earlier. Gatsby's quest for love leads him from a life of poverty to one of immense wealth, all in the hopes of winning Daisy's heart."
    },
    {
       title: "The Hitchhiker's Guide to the Galaxy",
@@ -54,7 +57,8 @@ const arrayOfBookObjects = [
       header_background: "#1C8F31",
       buttons_background: "#6D5030",
       buttons_color: "#221949",
-      button_hover: "#7FB5B8"
+      button_hover: "#7FB5B8",
+      long_description: "The The Hitchhiker's Guide to the Galaxy is an adaptation of the first four parts of Adams's radio series of the same name, centering on the adventures of the only man to survive the destruction of Earth; while roaming outer space, he comes to learn the truth behind Earth's existence. The novel was first published in London on 12 October 1979."
    }
 ]
 
@@ -87,7 +91,7 @@ const displayBook = (bookNumber) => {
    const bookIndex = arrayOfBookObjects[bookNumber - 1];
    // deconstruction of object
    const {title, author, publisher, year, cover, jacketColor, cover_background, 
-      header_background, buttons_background, buttons_color, button_hover} = bookIndex
+      header_background, buttons_background, buttons_color, button_hover, long_description} = bookIndex
 
    // hide main screen and show first book
    intro.hidden = true;
@@ -98,7 +102,7 @@ const displayBook = (bookNumber) => {
    bookAuthor.innerHTML = author;
    bookPublisher.innerHTML = publisher;
    bookYear.innerHTML = year;
-   bookImage.innerHTML = "<img src ='" + cover + "' id='img' >";
+   bookImage.innerHTML = "<img src ='" + cover + "' id='img' > <p class='overlay text-center' id='about' style='font-size:90%;'>" + long_description + "</p>";
 
    // set background colors to that in the current object
    bookDisplay.style.backgroundColor = jacketColor;
